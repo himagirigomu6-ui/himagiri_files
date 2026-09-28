@@ -1,0 +1,136 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+    <button onclick="add()">ADD</button>
+    
+    <script>
+   
+
+        function add() {
+
+            let bill = 2500;
+            let totalBill = 52500;
+
+            // WHILE LOOP
+            console.log("WHILE LOOP");
+
+            let sum1 = 0;
+            let count1 = 0;
+
+            while (sum1 < totalBill) {
+                sum1 = sum1 + bill;
+                count1++;
+            }
+
+            console.log("Number of Bills: " + count1);
+            console.log("Total Amount: " + sum1);
+
+
+            // FOR LOOP
+            console.log("FOR LOOP");
+
+            let sum2 = 0;
+
+            for (let i = 1; i <= totalBill / bill; i++) {
+                sum2 = sum2 + bill;
+            }
+
+            console.log("Number of Bills: " + totalBill / bill);
+            console.log("Total Amount: " + sum2);
+
+
+            // DO WHILE LOOP
+            console.log("DO WHILE LOOP");
+
+            let sum3 = 0;
+            let count3 = 0;
+
+            do {
+                sum3 = sum3 + bill;
+                count3++;
+            } while (sum3 < totalBill);
+
+            console.log("Number of Bills: " + count3);
+            console.log("Total Amount: " + sum3);
+        }
+  
+       
+
+    </script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mobile Recharge</title>
+</head>
+<body>
+
+    <h2>Mobile Recharge</h2>
+
+    <button onclick="calculate()">Calculate</button>
+     <p id="output"></p>
+<script>
+        function calculate() {
+
+            let rechargeAmount = 300;
+            let totalAmount = 5000;
+            let discount = 10;
+            let count = 0;
+
+            for (let amount = 0; amount < totalAmount; amount += rechargeAmount) {
+                count++;
+            }
+
+            let discountAmount = totalAmount * discount / 100;
+            let finalAmount = totalAmount - discountAmount;
+
+            document.getElementById("output").innerHTML =
+                "Recharge Amount: ₹" + rechargeAmount + "<br>" +
+                "Total Amount: ₹" + totalAmount + "<br>" +
+                "Discount: " + discount + "%<br>" +
+                "Discount Amount: ₹" + discountAmount + "<br>" +
+                "Final Amount: ₹" + finalAmount + "<br>" +
+                "Number of Recharges: " + count;
+        }
+    </script>
+
+</body>
+</html>
+     <!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz</title>
+</head>
+<body>
+
+    <h2>Quiz Result</h2>
+
+    <button onclick="Quiz()">Result</button>
+
+    <p id="output"></p>
+
+    <script>
+        function Quiz() {
+
+            let totalQuestions = 10;
+            let answeredQuestions = 8;
+            let initialScore = 0;
+
+            for (let i = 1; i <= answeredQuestions; i++) {
+                initialScore++;
+            }
+
+            document.getElementById("output").innerHTML =
+                "Total Questions: " + totalQuestions + "<br>" +
+                "Answered Questions: " + answeredQuestions + "<br>" +
+                "Initial Score: " + initialScore;
+        }
+    </script>
+
+</body>
+</html>

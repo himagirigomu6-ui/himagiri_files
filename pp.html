@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+    <title>T-Shirt Product</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #698dd6;
+            text-align: center;
+             
+        }
+
+        .box {
+            width: 500px;
+            margin: 80px auto;
+            padding: 30px;
+            background-color: rgb(215, 168, 203);
+            border-radius: 25px;
+            box-shadow: 0 0 10px rgb(2, 2, 2);
+        }
+
+        #mainimage {
+            width: 500px;
+            height: 400px;
+            object-fit: contain;
+            border-radius: 20px;
+        }
+
+        .thumbnails img {
+            width: 50px;
+            height: 90px;
+            object-fit: cover;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 80px;
+            border: 2px solid #070707;
+            padding: 2px solid rgb(0, 0, 0);
+        }
+
+        .size-btn {
+            padding: 10px 18px;
+            margin: 5px;
+            cursor: pointer;
+            border: 1px solid #1c09ed;
+            border-radius: 5px;
+            background-color: rgb(192, 106, 172);
+        }
+
+        .size-btn.active {
+            background-color: rgb(216, 86, 140);
+            color: white;
+        }
+
+        .cart-btn {
+            padding: 12px 25px;
+            background-color: rgb(152, 179, 246);
+            color: rgb(229, 8, 100);
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+
+        <h2>T-Shirt Product</h2>
+
+        <!-- Main Image -->
+        <img id="mainimage" src="Screenshot 2026-09-22 163234.png">
+
+        <!-- Small Images -->
+        <div class="thumbnails">
+            <img src="Screenshot 2026-09-22 162607.png"
+                 onclick="changeImage(this.src)">
+
+            <img src="Screenshot 2026-09-22 162500.png"
+                 onclick="changeImage(this.src)">
+
+            <img src="Screenshot 2026-09-22 162411.png"
+                 onclick="changeImage(this.src)">
+
+            <img src="Screenshot 2026-09-22 162346.png"
+                 onclick="changeImage(this.src)">
+        </div>
+
+        <h3>Select Size</h3>
+
+        <button class="size-btn"
+                onclick="selectSize(this, 'S', 500)">S</button>
+        <button class="size-btn"
+                onclick="selectSize(this, 'M', 600)">M</button>
+        <button class="size-btn"
+                onclick="selectSize(this, 'L', 650)">L</button>
+        <button class="size-btn"
+                onclick="selectSize(this, 'XL', 670)">XL</button>
+
+        <h3>  Selected Size: <span id="selectedsize">S</span></h3>
+           
+        <h3> Price: $ <span id="price">500</span></h3>
+            <button class="cart-btn" onclick="addToCart()">
+            Add to Cart
+        </button>
+
+    </div>
+
+    <script>
+
+       
+        // Change main image
+        function changeImage(imagePath) {
+            document.getElementById("mainimage").src = imagePath;
+        }
+
+        // Select size and price
+        function selectSize(button, size, price) {
+
+            document.getElementById("selectedsize").innerHTML = size;
+            document.getElementById("price").innerHTML = price;
+
+            let buttons = document.getElementsByClassName("size-btn");
+
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove("active");
+            }
+
+            button.classList.add("active");
+        }
+
+        // Add product to cart
+        function addToCart() {
+         
+            let size = document.getElementById("selectedsize").innerHTML;
+            let price = document.getElementById("price").innerHTML;
+
+            alert(
+                "Product added successfully!\n" +
+                "Size: " + size + "\n" +
+                "Price: $" + price
+            );
+        }
+    </script>
+
+</body>
+</html>

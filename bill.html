@@ -1,0 +1,39 @@
+<html>
+    <head>
+
+    </head>
+    <button onclick="add()">add</button>
+   
+        <script>
+ function add(){
+
+ }
+
+let totalBill = 40000;
+let discount = 0;
+
+// Check discount using if-else if-else
+if (totalBill > 30000) {
+    discount = totalBill * 0.10;
+} else if (totalBill > 20000) {
+    discount = totalBill * 0.05;
+} else {
+    discount = 0;
+}
+
+let finalBill = totalBill - discount;
+
+// Print bill using a loop
+let billDetails = [
+    "----- BILL -----",
+    "Total Bill: ₹" + totalBill,
+    "Discount: ₹" + discount,
+    "Final Bill: ₹" + finalBill
+];
+
+for (let i = 0; i < billDetails.length; i++) {
+    console.log(billDetails[i]);
+}
+
+    </body>
+</html>

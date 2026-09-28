@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mobile Recharge</title>
+</head>
+<body>
+
+    <h2>Mobile Recharge</h2>
+
+    <button onclick="calculate()">Calculate</button>
+
+   
+
+    <script>
+        function calculate() {
+
+            let rechargeAmount = 300;
+            let totalAmount = 5000;
+            let discount = 10;
+            let count = 0;
+
+            for (let amount = 0; amount < totalAmount; amount += rechargeAmount) {
+                count++;
+            }
+
+            let discountAmount = totalAmount * discount / 100;
+            let finalAmount = totalAmount - discountAmount;
+
+            document.getElementById("output").innerHTML =
+                "Recharge Amount: ₹" + rechargeAmount + "<br>" +
+                "Total Amount: ₹" + totalAmount + "<br>" +
+                "Discount: " + discount + "%<br>" +
+                "Discount Amount: ₹" + discountAmount + "<br>" +
+                "Final Amount: ₹" + finalAmount + "<br>" +
+                "Number of Recharges: " + count;
+        }
+    </script>
+
+</body>
+</html>
