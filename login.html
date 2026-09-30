@@ -1,0 +1,155 @@
+
+<html>
+<head>
+    <title>Login Form</title>
+
+    <style>
+        button {
+            width: 80%;
+            color: aliceblue;
+            background-color: blue;
+            padding: 10px;
+        }
+
+        body {
+            border: 10px solid rgb(12, 10, 13);
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: 10% 40% 20% 40%;
+            border-radius: 50px;
+            padding: 20px;
+            
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Login</h1>
+
+    <h2>Enter your email and password to access your account.</h2>
+
+    <label for="username">Username</label>
+    <input type="text" id="username" placeholder="Enter User Name">
+    <br><br>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" placeholder="Enter User Email">
+    <br><br>
+
+    <label for="password">Password</label>
+    <input type="password" id="password" placeholder="Enter User Password">
+    <br><br>
+
+    <input type="checkbox" id="remember"> Remember Me
+   <a href="#">Forgot Password</a>
+    <br><br>
+   <p id="message"></p>
+   <button onclick="login()">Login</button><br><br>
+
+    __________________or__________________
+
+    <p> Don't have an account?<a href="#">Sign Up</a></p>
+    <script>
+        let users = {
+            username: "hima",
+            email: "hima11",
+            password: "12345"
+        };
+        localStorage.setItem("user", JSON.stringify(users));
+        function login() {
+            let username = document.getElementById("username").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let storedUser = localStorage.getItem("user");
+            if (storedUser === null) {
+            document.getElementById("message").innerHTML ="Please signup first";
+            return;
+            }
+            let data = JSON.parse(storedUser);
+            if (
+                data.username === username &&
+                data.email === email &&
+                data.password === password
+            ) {
+            document.getElementById("message").innerHTML ="Login Successful!";
+            sessionStorage.setItem("username", username);
+            } else {
+            document.getElementById("message").innerHTML = "Login Failed!";
+             }
+        }
+
+    </script>
+  
+</body>
+</html>
+
+<html>
+<head>
+    <title>User Table</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: lightblue;
+        }
+
+        table {
+            width: 70%;
+            margin: 50px auto;
+            border-collapse: collapse;
+            background-color: white;
+        }
+
+        th, td {
+            border: 2px solid black;
+            padding: 15px;
+        }
+
+        th {
+            background-color: blue;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>User Details</h1>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+        </tr>
+
+        <tr>
+            <td>Hima</td>
+            <td>hima@gmail.com</td>
+            <td>12345</td>
+        </tr>
+
+        <tr>
+            <td>sai</td>
+            <td>sai@gmail.com</td>
+            <td>42546</td>
+        </tr>
+
+        <tr>
+            <td>lova</td>
+            <td>lova@gmail.com</td>
+            <td>54321</td>
+        </tr>
+    </table>
+
+</body>
+</html>
+
+
+
