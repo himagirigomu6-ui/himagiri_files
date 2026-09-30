@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <title>array</title>
+    </head>
+    <body>
+        <script>
+            let fruits=["Apple","Banana","mango","Orange"];
+            fruits.push("Guava");
+            console.log(fruits);
+
+            let fruits1=["Apple","Banana","mango","Orange","Guava"];
+            fruits1.pop();
+            console.log(fruits1);
+
+            let fruits2=["Apple","Banana","mango","Orange","Guava"];
+            fruits2.shift(fruits2);
+            console.log(fruits2);
+
+            let fruits3=["Apple","Banana","mango","Orange","Guava"];
+            fruits3.unshift("Grapes");
+            console.log(fruits3);
+
+            let fruits4=["Apple","Banana","mango","Orange","Guava"];
+            console.log(fruits4.length);
+
+            let fruits5=["Apple","Banana","mango","Orange","Guava"];
+            console.log(fruits5.indexOf("mango"));
+
+            let fruits6=["Apple","Banana","mango","Orange","Guava"];
+            console.log(fruits6.includes("Grapes"));
+            console.log(fruits6.includes("Banana"));
+
+            let fruits7=["Apple","Banana","mango","Orange","Guava"];
+            fruits7.splice(4,4,"Grapes");
+            console.log(fruits7);
+
+            let fruits8=["Apple","Banana","mango","Orange","Guava"];
+            fruits8.slice(0,1);
+            console.log(fruits8);
+
+            let fruits9=["Apple","Banana","mango","Orange","Guava"];
+            fruits9.reverse();
+            console.log(fruits9); 
+
+            let fruits10=["Apple","Banana","Mango","Orange","Guava"];
+            fruits10.sort();
+            console.log(fruits10);
+
+            let fruits11=["Apple","Banana","Mango",];
+            let fruits12=["Orange","Guava"];
+             let fruitss=fruits11.concat(fruits12);
+            console.log(fruitss);
+
+            let fruits13=["Apple","Banana","Mango","Orange","Guava"];
+            fruits.join(",");
+            console.log(fruits.join(","));
+            fruits.join("-");
+            console.log(fruits.join("-"));
+            fruits.join("_");
+            console.log(fruits.join("_"));
+
+
+            let fruits14=["Apple","Banana","Mango","Orange","Guava"];
+            fruits14.forEach(function(fruits14){
+                console.log(fruits14);
+            });
+             fruits14.forEach(function(fruits14){
+                console.log("Welcome"+fruits14);
+            });
+
+            let marks=[25,50,60,85,75];
+            let update=marks.map(marks=>marks+5);
+            console.log(update);
+
+            let update1=marks.map(marks=>marks-5);
+            console.log(update1);
+             
+            let fruits15=["Apple","Banana","Mango","Orange","Guava"];
+            let update2=fruits15.map(fruits15=>fruits15.toUpperCase())
+            console.log(update2);
+
+          let numeric=[1,2,3,4,5,6,7,8,9]
+          let digit=numeric.filter(numers=>numers>=5);
+          console.log(digit);
+          let numeric1=[1,2,3,4,5,6,7,8,9]
+          let digit1=numeric.filter(numers=>numers<=5);
+          console.log(digit1);
+
+          let numeric3=[1,2,4,5,]
+          let digit2=numeric.find(numers=>numers<=3);
+          console.log(digit2);
+          let numeric4=[5,6,8,9,4]
+          let digit3=numeric.find(numers=>numers>=4);
+          console.log(digit3);
+
+          let addition=[2,4,56,7,5];
+          let finalvaluee=addition.reduce((sum,num)=>{
+          return sum+num;
+          })
+          console.log(finalvaluee);
+
+          let  a=[3,2,5,4,4,5,7,7,8,6,3,4,2,5,6,7];
+          let unique=[...new Set (a)];
+          console.log(unique);
+        </script>
+    </body>
+</html>
